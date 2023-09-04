@@ -1,8 +1,5 @@
 from django.contrib import admin
 from . import models
-from .models import Order
-from rangefilter.filters import DateRangeFilter, DateTimeRangeFilter, NumericRangeFilter
-from .models import Order
 
 
 class SingleObjectAdminMixin:
@@ -44,11 +41,16 @@ class ReviewAdmin(admin.ModelAdmin):
 
 
 class OrderAdmin(admin.ModelAdmin):
-    list_display = ( 'name', 'phone')
+    list_display = ('name', 'phone')
 
 
 @admin.register(models.Order)
 class OrderAdmin(OrderAdmin):
+    pass
+
+
+@admin.register(models.YourModel)
+class YourModelAdmin(admin.ModelAdmin):
     pass
 
 

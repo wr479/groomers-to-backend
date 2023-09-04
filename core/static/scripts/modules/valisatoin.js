@@ -12,36 +12,8 @@ export function validation() {
     }
 
 
-    $('.makeOrder').on('click', () => {
-        let numberInput = $('.numbers-tel');
-        let inputs = $('.val');
-        let ajaxData = {}; // Очищаем данные перед каждой отправкой
-
-        $.each(inputs, (key, input) => {
-            const type = $(input).attr('data-inputType');
-            const value = $(input).val();
-            if (value === '') {
-                $(input).addClass('error');
-            } else {
-                $(input).removeClass('error').addClass('pop');
-                ajaxData[type] = value;
-            }
-        });
-
-        if (numberInput.val().length < 10) { // Проверка на минимальную длину номера
-            numberInput.addClass('error');
-        } else {
-            numberInput.removeClass('error');
-        }
-
-        if ($('.error').length === 0) {
-            let type = $(".popup").attr("data-type");
-            sendAjax(ajaxData, type);
-        }
-    });
-
     $('.makeOrder').click(function () {
-        console.log("gfdg")
+
         let name = $('.name-fename').val();
         let phone = $('.numbers-tel').val();
         let question = $('.type-question').val();
@@ -58,7 +30,7 @@ export function validation() {
         let csrftoken = $("input[name='csrfmiddlewaretoken']").val();
 
         // Make an AJAX POST request
-        console.log(data)
+
         $.ajax({
             type: 'POST',
             url: '/ajax/', // Replace with your server endpoint URL

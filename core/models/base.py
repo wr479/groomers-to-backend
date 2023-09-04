@@ -22,14 +22,9 @@ class BaseSEOModel(models.Model):
     seo_description = models.CharField(max_length=500, verbose_name="Description", blank=True)
     seo_keywords = models.CharField(max_length=500, verbose_name="Keywords", blank=True)
 
-    price_title = models.CharField(max_length=200, verbose_name="Price title",blank=True)
+    price_title = models.CharField(max_length=200, verbose_name="Price title", blank=True)
     price_money = models.CharField(max_length=200, verbose_name="money", blank=True)
-    price_description = models.TextField(max_length=2000,verbose_name="Price description", blank=True)
-
-
-
-
-
+    price_description = models.TextField(max_length=2000, verbose_name="Price description", blank=True)
 
 
 class BaseMenuItemModel(models.Model):

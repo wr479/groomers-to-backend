@@ -1,14 +1,11 @@
 import pdb
-
+import json
 from django.views import generic
 from core import models, mixins
 from django.views import View
-import json
-import requests
-from django.http import HttpResponse, JsonResponse
-from django.shortcuts import get_object_or_404
-from django.template import loader
-from django.template.context_processors import csrf
+from . import models
+from ..models import YourModel
+from django.http import JsonResponse
 
 
 class IndexView(mixins.TextPageMixin, generic.TemplateView):
@@ -54,12 +51,25 @@ class ReviewsView(mixins.TextPageMixin, generic.TemplateView):
 
 
 class AjaxView(View):
-    def post(self, request):
-        data = request.body
-        pdb.set_trace()
+    print("faes")
 
+    def post(self, request):
+        data = json.loads(request.body)
+        name = data.get('name')
+        phone = data.get('phone')
+        question = data.get('question')
+        category = data.get('category')
+
+        # Создайте объект модели и сохраните данные
+        your_model_instance = YourModel(name=name, phone=phone, question=question, category=category)
+        your_model_instance.save()
+
+        # Верните успешный JSON-ответ
+        response_data = {'message': 'Данные успешно сохранены'}
+        return JsonResponse(response_data)
         # if data.get('type') == 'callback':
-    #             result = create_order(['name', 'phone'], data, 'Обратный звонок')
+
+        # result = create_order(['name', 'phone'], data, 'Обратный звонок')
 
     def create_order(self):
         pass

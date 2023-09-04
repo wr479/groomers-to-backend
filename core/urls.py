@@ -1,12 +1,6 @@
-from django.urls import path
-from .models import Masters
-from .models import Service
-from .models import Review
+
 from django.urls import re_path, path
-from django.conf import settings
-from django.conf.urls.static import static
-from django.contrib.sitemaps import GenericSitemap
-from django.contrib.sitemaps.views import sitemap
+
 
 from . import views
 

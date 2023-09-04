@@ -113,8 +113,8 @@ class Order(models.Model):
     # клиент
     name = models.CharField('Имя', max_length=100)
     phone = models.CharField('Телефон', max_length=100)
-    # доп инфа
 
+    # доп инфа
 
     def __str__(self):
         return self.name
@@ -132,3 +132,13 @@ class Review(models.Model):
 
     def __str__(self):
         return self.review_name
+
+
+class YourModel(models.Model):
+    name = models.CharField(max_length=255)
+    phone = models.CharField(max_length=15)
+    question = models.TextField()
+    category = models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.name
