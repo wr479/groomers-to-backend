@@ -1,0 +1,71 @@
+@import "../modules/basic";
+header{
+    position: fixed;
+    width: 100%;
+    top: 20px;
+    z-index: 999;
+    .header-section{
+        .header-container{
+            position: relative;
+                z-index: 99;
+            .content-main{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                border-radius: 1000px;
+                border: 1px solid var(--black-10, rgba(0, 0, 0, 0.10));
+                padding: 12px 40px;
+                background-color: $white;
+                @include mobile{
+                    padding: 10px 20px;
+                }
+                img{
+                    @include mobile{
+                        width: 113px;
+                    }
+                }
+                .start-content{
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    .text{
+                        display: flex;
+                        gap: 40px;
+                        margin-left: 128px;
+                        @include tabletVertical{
+                            display: none;
+                        }
+                        a{
+                            text-decoration: none;
+                        }
+                        span{
+                            display: block;
+                            color: $grey;
+                            @include heading_16;
+                            
+                        };
+                        .black-text{
+                            color: $black;
+                        }
+                    }
+                }
+                .end-content-mobile{
+                    display: none;
+                    @include tabletVertical{
+                        display: block;
+                    }
+                }
+                .end-content{
+                    display: flex;
+                    gap: 10px;
+                    @include tabletVertical{
+                        display: none;
+                    }
+                    button{
+                        @include heading_16;
+                    }
+                }
+            }
+        }
+    }
+}

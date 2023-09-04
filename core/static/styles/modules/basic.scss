@@ -1,0 +1,145 @@
+// Шаблонные компоненты стилей
+
+// переменные
+:root{
+    --container: 1800px;
+    // --content: 872px;
+    @include laptop{
+        --container:1600px;
+    };
+
+    @include small-laptop{
+        --container:1400px;
+    };
+    @include tabletHorizontal{
+        --container:1200px
+    }
+    @include tabletVertical{
+        --container:880px;
+    };
+    @include small_tabletVertical(){
+        --container:650px
+    };
+    @include mobile{
+        --container:500px;
+    };
+    @include small_mobile{
+        --container:345px;
+    };
+    @include small_mega_mobile{
+        --container:345px
+    };
+};
+
+$white:#ffffff;
+$black:rgba(0, 0, 0, 1);
+$white-blue:#F8F8F8;
+$white-grey:rgba(255, 255, 255, 1);
+$grey-blue:rgba(207, 210, 231, 1);
+$brown:rgba(154, 80, 15, 1);
+$grey:rgba(0, 0, 0, .4);
+
+// миксины
+@mixin padding-desktop(){
+    padding: 40px;
+}
+@mixin padding-mobile(){
+    padding: 30px;
+}
+@mixin padding-section(){
+    padding: 120px 0;
+}
+@mixin grid_column ($column){
+    display: grid;
+    grid-template-columns: repeat($column, minmax(0, 1fr));
+}
+
+@mixin background(){
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+@mixin heading_96(){
+    font-size: 96px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%;
+    letter-spacing: -1.92px;
+}
+@mixin heading_78(){
+    font-size: 78px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 110%;
+    letter-spacing: -1.56px;
+}
+@mixin heading_48(){
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 110%; /* 52.8px */
+    letter-spacing: -0.96px;
+}
+@mixin heading_30(){
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%; /* 36px */
+    letter-spacing: -0.6px;
+}
+@mixin heading_20(){
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%; /* 24px */
+}
+@mixin margin(){
+    margin-top: 35px;
+    margin-bottom: 35px;
+}@mixin heading_24(){
+    font-size: 24px;
+    font-weight: 400;
+}@mixin heading_16(){
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%; /* 19.2px */
+}@mixin heading_big(){
+    font-size: 273px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 110%; /* 279.529px */
+    letter-spacing: -12.706px;
+}
+// компоненты
+
+* {
+    box-sizing: border-box;
+    font-family: 'Manrope', sans-serif;
+
+}
+
+body, html{
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    max-width: var(--container);
+    margin: 0 auto
+}
+
+.d-none{
+    display: none !important;
+}
+input{
+    outline: none;
+    
+}
+  
+  input:focus:invalid {
+    box-shadow: none;
+  }
+  a{
+    text-decoration: none;
+  }

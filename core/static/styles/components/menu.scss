@@ -1,0 +1,71 @@
+.d-none-menu{
+    display: none;
+}
+.d-none-block{
+    display: block;
+}
+.menu{
+    @include background;
+    background-image: url(dog.png);
+    width: 100%;
+    height: 100vh;
+    top: -20px;
+    position: absolute;
+
+    .menu-sub{
+        margin-top: 30%;
+        a,span{
+            color: #000;
+            text-decoration: none;
+        }
+        .end-content{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            position: fixed;
+            bottom: 20px;
+            width: 340px;
+            .white{
+                background-color: $white;
+
+            }
+        }
+        .cards{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            .one-card{
+                border-radius: 32px 6px 6px 6px;
+                border: 1px solid rgba(0, 0, 0, 0.10);
+            }
+            .two-card{
+                border-radius: 6px 32px 6px 6px;
+                border: 1px solid rgba(0, 0, 0, 0.10);
+            }
+            .three-card{
+                border-radius: 6px 6px 6px 32px;
+                border: 1px solid rgba(0, 0, 0, 0.10);
+            }
+            .four-card{
+                border-radius: 6px 6px 32px 6px;
+                border: 1px solid rgba(0, 0, 0, 0.10);
+            }
+            .card{
+                background-color: $white;
+                padding: 20px;
+                display: flex;
+                flex-direction: column;
+                gap: 54px;
+                position: relative;
+                .h1-text{
+                    @include heading_16;
+                    display: block;
+                }
+                svg{
+                    align-self: flex-end;
+                }
+                
+            }
+        }
+    }
+}

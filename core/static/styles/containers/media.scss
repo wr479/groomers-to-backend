@@ -1,0 +1,45 @@
+@import "variables.scss";
+
+@mixin desktop(){
+    @media (max-width: $breakpoint_desktop){
+        @content
+    };
+   
+};
+ 
+
+@mixin laptop(){
+    @media (max-width: $breakpoint_laptop){
+        @content
+      };
+};
+@mixin small_laptop(){
+  @media (max-width: $breakpoint_small_laptop){
+    @content
+}
+};
+@mixin tabletHorizontal(){
+  @media (max-width: $breakpoint_tabletHorizontal){
+    @content
+}
+};
+@mixin tabletVertical(){
+  @media (max-width: $breakpoint_tabletVertical){
+    @content
+}};
+@mixin small_tabletVertical(){
+  @media (max-width: $breakpoint_small_tabletVertical){
+    @content
+}};
+@mixin mobile(){
+  @media (max-width: $breakpoint_mobile){
+    @content
+}};
+@mixin small_mobile(){
+  @media (max-width: $breakpoint_small_mobile){
+    @content
+}};
+@mixin small_mega_mobile(){
+  @media (max-width: $breakpoint_small_mega_mobile){
+    @content
+}};

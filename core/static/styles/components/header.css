@@ -1,0 +1,67 @@
+:root {
+  --container: 1800px;
+  --content: 872px ;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body, html {
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  top: 20px;
+  z-index: 999;
+}
+header .header-section .header-container .content-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 1000px;
+  border: 1px solid var(--black-10, rgba(0, 0, 0, 0.1));
+  padding: 12px 40px;
+  background-color: #ffffff;
+}
+header .header-section .header-container .content-main .start-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .header-section .header-container .content-main .start-content .text {
+  display: flex;
+  gap: 40px;
+  margin-left: 128px;
+}
+header .header-section .header-container .content-main .start-content .text span {
+  display: block;
+  color: rgba(0, 0, 0, 0.4);
+  font-family: "Inter Tight", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%; /* 19.2px */
+}
+header .header-section .header-container .content-main .start-content .text .black-text {
+  color: rgb(0, 0, 0);
+}
+header .header-section .header-container .content-main .end-content {
+  display: flex;
+  gap: 10px;
+}
+header .header-section .header-container .content-main .end-content button {
+  font-family: "Inter Tight", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%; /* 19.2px */
+}/*# sourceMappingURL=header.css.map */

@@ -1,0 +1,90 @@
+footer{
+    background-color: #F8F8F8;
+    @include padding-section;
+    padding-bottom: 0;
+    .footer-section{
+        background-color: $black;
+            padding-top: 28px;
+            padding-bottom: 60px;
+        .footer-container{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 200px;
+            @include mobile{
+                flex-direction: row;
+                padding: 10px;
+                gap: 32px;
+            }
+    
+                .d-block-mobile{
+                    display: none;
+                    @include mobile{
+                        display: block;
+                    }
+                }
+                .d-none-mobile{
+                    display: block;
+                    @include mobile{
+                        display: none;
+                    }
+                }
+            
+            .footer-end{
+                display: flex;
+                justify-content: space-between;
+                @include mobile{
+                    flex-direction: column-reverse;
+                    justify-content: space-between;
+                    gap: 35px;
+                    width: 195px;
+                }
+                img{
+                    @include mobile{
+                        width: 100%;
+                    }
+                }
+                .end{
+                    display: flex;
+                    gap: 322px;
+                    @include tabletVertical{
+                        gap: 55px;
+                    }@include mobile{
+                        flex-direction: column;
+                        gap: 395px;
+                    }
+                }
+                .def{
+                    display: block;
+                    @include heading_20;
+                    color: $white;
+                    width: 250px;
+                    @include small_tabletVertical{
+                        font-size: 16px;
+                        width: 195px;
+                    }
+                }
+                .politic{
+                    display: flex;
+                    flex-direction: column;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                    @include mobile{
+                        display: flex;
+                        flex-direction: column;
+                        gap: 40px
+                    }
+                    span{
+                        @include heading_16;
+                        display: block;
+                        color: $white;
+                        opacity: 0.4000000059604645;
+                        @include mobile{
+                            width: 187px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

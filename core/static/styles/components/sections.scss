@@ -1,0 +1,1226 @@
+section{
+    .hero-section{
+        background-image: url('../images/animate-image/background/dog.png');
+        @include background;
+        @include mobile{
+            background-position: 59% 40%;
+            background-size: inherit;
+        }
+         
+        .hero-container{
+            padding-bottom: 20px;
+            height: calc(100vh);
+            display: flex;
+            align-items: flex-end;
+            @include mobile{
+                padding-bottom: 0;
+                --container:100%;
+            }
+            .content-text{
+                
+                @include padding-desktop;
+                background-blend-mode: normal, color-burn;
+                backdrop-filter: blur(20px);
+                display: inline-flex;
+                flex-direction: column;
+                gap: 60px;
+                border-radius: 12px 64px 12px 0px;
+                border: 1px solid rgba(255, 255, 255, 0.10);
+                
+                @include mobile{
+                    padding: 20px;
+                    padding-right: 10px;
+                    gap: 40px;
+                }
+                .h1-text{
+                    display: block;
+                    @include heading_96;
+                    color: $white;
+                    max-width: 1008px;
+                    @include tabletVertical{
+                        font-size: 36px;
+                    }
+                    @include mobile{
+                        @include heading_48;
+                        width: 335px;
+                    }
+                   }
+                   .text{
+                    display: flex;
+                    gap: 76px;
+                    @include mobile{
+                        gap: 40px;
+                    }
+                    .d-none-text{
+                        @include mobile{
+                            display: none
+                        }
+                    }
+                    .p-text{
+                        @include heading_20;
+                        color: $white;
+                        display: block;
+                        @include mobile{
+                            @include heading_16;
+                            width: 344px;
+                        }
+                        
+                    }
+                    .d-none-text{
+                        display: block;
+                        @include tabletVertical{
+                             display: none;
+                        }
+                    }
+            }
+          
+           }
+        }
+    }
+    .gryming-section{
+        background-color: $white-blue;
+        @include padding-section;
+        @include mobile{
+            padding: 40px 0;
+        }
+        .gryming-container{
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 80px;
+            @include tabletVertical{
+                gap: 275px;
+            }
+            @include mobile{
+                gap: 80px;
+            }
+            .help-gryming-text{
+                padding: 40px;
+                display: flex;
+                gap: 94px;
+                @include tabletVertical{
+                    flex-direction: column;
+                }
+                @include mobile {
+                    padding: 0px;
+                    gap: 77px;
+                }
+                .parara{
+                    max-width: 991px;
+                }
+                .h1-text{
+                    display: block;
+                    @include heading_78;
+                    @include small-laptop{
+                        font-size: 58px;
+                    }
+                    @include tabletHorizontal{
+                        font-size: 48px;
+                    }
+                    @include small_mobile{
+                        font-size: 28px;
+                        width: 335px;
+                    }
+                    .help{
+                        color: $grey;
+                    }
+                }
+                .small-text{
+                    .h1-text{
+                        display: block;
+                        color: $brown;
+                        padding-bottom: 70px;
+                        border-bottom: 1px solid rgba(0, 0, 0, 0.10);
+                        @include small_mobile{
+                            font-size: 48px;
+                            padding-bottom: 40px;
+                        }
+                    }
+                    .p-text{
+                        display: block;
+                        padding-top: 20px;
+                        @include heading_20;
+                        width: 454px;
+                        @include small_mobile{
+                            padding: 0;
+                            padding-top: 20px;
+                            font-size: 16px;
+                            width: 315px;
+                        }
+                    }
+                }
+            }
+            .main-procedoor{
+                display: flex;
+                justify-content: flex-end;
+                gap: 20px;
+                @include tabletVertical{
+                    flex-direction: column;
+                }
+                img{
+                    @include small-mobile{
+                        max-width: 335px;
+                    }
+                }
+                .content{
+                    display: flex;
+                    background-color: $white;
+                    @include padding-desktop;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    border-radius: 12px 64px 12px 12px;
+                    max-width: 676px;
+                    border: 1px solid var(--black-10, rgba(0, 0, 0, 0.10));
+                    @include small_mobile{
+                        padding: 30px;
+                        gap: 80px;
+                        width: 335px;
+                    }
+                    .types-text{
+                        
+                    }
+                    .h1-text{
+                        display: block;
+                        @include heading_48;
+                        @include small_mobile{
+                            font-size: 28px;
+                            width: 159px;
+                        }
+                    }
+                    .p-text{
+                        width: 354px;
+                        display: block;
+                        @include heading_20;
+                        @include small-mobile{
+                            font-size: 16px;
+                            width: 263px;
+                        }
+                    }
+                }
+            }
+        }
+    }  
+    
+    .types-grooming-section{
+        @include padding-section;
+        background-color: $white-blue;
+        
+        @include mobile{
+            width: 100%;
+            background-color: $white;
+            padding: 40px 0;
+            border-radius: 32px;
+        }
+        .types-grooming-container{
+            background-color: $white;
+            border-radius: 64px;
+            margin-left: 20px;
+            margin-right: 20px;
+            padding: 120px 40px;
+            @include mobile{
+                padding: 20px 0;
+            }
+            img {
+                transition: opacity 1.5s;
+                position: sticky;
+                top: 150px;
+                @include tabletVertical{
+                    display: none;
+                }
+            }
+            .content{
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: column;
+                .text-types{
+                    display: flex;
+                    flex-direction: column;
+                    align-content: flex-end;
+                    flex-wrap: wrap;
+                    @include tabletVertical{
+                        align-content: flex-start;
+                    }
+                }
+                .cards{
+                    display: flex;
+                    gap: 156px;
+                    align-items: flex-start;
+                    @include small-laptop{
+                        gap: 40px;
+                    }
+                    .parems{
+                        width: 100%;
+                    }
+                    .types-grooming{
+                        cursor: pointer;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: flex-start;
+                        padding:40px 0 ;
+                        border-bottom: 1px solid var(--black-10, rgba(0, 0, 0, 0.10));
+                        opacity: 0.4000000059604645;
+                        @include tabletVertical{
+                            flex-direction: column;
+                            gap: 45px;
+                        }
+                        .mobile{
+                            @include tabletVertical{
+                                display: flex;
+                                gap: 70px;
+                                align-items: center;
+                            }
+                            @include small-mobile{
+                                gap: 40px;
+                                
+                            }
+                            
+                        }
+                        button{
+                            @include heading_16;
+                            @include tabletVertical{
+                                max-width: 612px;
+                            }
+                            @include mobile{
+                                width: 335px;
+                            }
+                            @include small-mobile{
+                                width: 335px;
+                            }
+                        }
+                        .brown-text{
+                            display: inline-flex;
+                            @include heading_30;
+                            color: $brown;
+                        }
+                        .text{
+                            max-width: 470px;
+                            display: flex;
+                            flex-direction: column;
+                            gap: 40px;
+                            .h1-text{
+                                display: inline-flex;
+                                @include heading_30;
+                                padding-bottom: 0;
+                                border: none;
+                                width: 100%;
+                                    @include tabletVertical{
+                                        display: none;
+                                    }
+                                
+                            }
+                            .p-text{
+                                display: inline-flex;
+                                @include heading_20;
+                                width: 470px;
+                                @include small_mobile{
+                                    font-size: 16px;
+                                    width: 335px;
+                                }
+                                @include small_mega_mobile{
+                                    width: 287px;
+                                }
+                            }
+                        }
+                    }
+                }
+                .types-text{
+                    display: block;
+                    @include heading_20;
+                    color:$grey;
+                    margin-bottom: 40px;
+                    @include small-mobile{
+                        font-size: 16px;
+                    }
+                }
+                .h1-text{
+                    display: inline-block;
+                    @include heading_48;
+                    width: 1170px;
+                    padding-bottom: 80px;
+                    border-bottom: 1px solid var(--black-10, rgba(0, 0, 0, 0.10));
+                    
+                        
+
+                    @include small-laptop{
+                        max-width: 641px;
+                        font-size: 28px;
+                    }
+                    @include tabletVertical{
+                        font-size: 36px;
+                        
+                    }
+                    @include small_tabletVertical{
+                        font-size: 24px;
+                        width: 100%;
+                    }
+                    @include mobile{
+                        display: block;
+                        padding: 0;
+                        max-width: 471px;
+                        padding-bottom:80px;
+                        
+                    }
+                    @include small_mobile{
+                        max-width: 325px;
+                        font-size: 30px;
+
+                    }
+                    .grey-text{
+                        color: $grey;
+                    }
+                }
+                .d-block-mobile{
+                    max-width: 200px;
+                    border: none;
+                    display: none;
+                    @include tabletVertical{
+                        display: block;
+                        font-size: 28px;
+                        padding: 0;
+                    }
+                    @include small-mobile{
+                        font-size: 20px;
+                        padding: 0;
+                    }
+                }
+                .types-grooming{
+                    @include small-mobile{
+                        max-width: 375px;
+                    }
+                }
+                    .types-grooming:hover{
+                        opacity: 1;
+                        transition: opacity .3s;
+                        
+                    }
+                    
+               
+                
+            }
+        }
+    }
+    .stages-section{
+        background-color: #F8F8F8;
+        @include padding-section;
+        @include mobile{
+            padding: 55px 0;
+        }
+        .stages-container{
+            img{
+                max-width: 100%;
+            }
+            .grids{
+                margin-top: -85px;
+                display: grid;
+                grid-template-columns: [col1] 50% [col2] 23% [col3] 25%;
+                grid-gap: 20px;
+                grid-template-rows: [row1] 62% [row2] 85%;
+                @include tabletVertical{
+                    display: flex;
+                    flex-direction: column;
+                    margin-top: -26px;
+                }
+                .h1-text{
+                    display: block;
+                    @include heading_30;
+                    color: $brown;
+                }
+                .p-text{
+                    @include heading_20;
+                    display: block;
+                    @include tabletHorizontal{
+                        font-size: 14px;
+                    }
+                    @include tabletVertical{
+                        font-size: 10px;
+                    }
+                    @include mobile{
+                        font-size: 20px;
+                    }
+                }
+                .two{
+                    border-radius: 12px  12px 64px 12px;
+                }
+                .three{
+                    border-radius: 12px 12px 12px 64px;;
+                }
+                .four{
+                    border-radius: 12px 64px 12px 12px;
+                }
+                .five{
+                    border-radius: 64px 12px 12px 12px;
+                }
+                .two,.three,.four,.five{
+                    border: 1px solid  rgba(0, 0, 0, 0.10);
+                    background-color: $white;
+                    @include padding-desktop;
+                    display: flex;
+                    flex-wrap: wrap;
+                    align-content: space-between;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    @include tabletVertical{
+                        gap: 55px;
+                        padding: 30px;
+                    }
+                }
+                .ped-one{
+                    grid-column: 1 ;
+                    grid-row: 1 / 3;
+                    background-color: $brown;
+                    border-radius: 12px  12px 64px 12px;
+                    @include padding-desktop;
+                    max-width: 890px;
+                    flex-wrap: wrap;
+                    align-content: space-between;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    display: flex;
+                    @include background;
+                    background-image: url(cat-bg.png);
+                    @include mobile{
+                        gap: 55px;
+                        padding: 30px
+                        
+                    }
+                        .p-text{
+                            @include heading_30;
+                            color: $white;
+                            display: block;
+                            max-width: 719px;
+                            @include tabletVertical{
+                                font-size: 24px;
+                            }
+                            @include mobile{
+                                font-size: 20px;
+                            }
+                        }
+                        .end-one{
+                            display: flex;
+                            justify-content: space-between;
+                            max-width:100%;
+                            @include laptop{
+                               .end-one {
+                                    gap: 464px;
+                                }
+                            }
+                            .h1-text{
+                                @include heading_78;
+                                color: $grey-blue;
+                                @include mobile{
+                                    font-size: 30px;
+                                }
+                            }
+                        }
+                    
+                }
+            }
+        }
+    }
+    .banner-section{
+        background-color: #F8F8F8;
+        @include padding-section;
+        padding-top:240px ;
+        @include mobile{
+            padding: 105px 0;
+        }
+        .banner-container{
+            display: flex;
+            gap: 24px;
+            background-color: $grey-blue;
+            border-radius: 12px 64px 12px 0px;
+            border: 1px solid rgba(255, 255, 255, 0.10);
+            @include mobile{
+                flex-wrap: wrap;
+            flex-direction: column-reverse;
+            }
+            img{
+                @include tabletVertical{
+                    max-width: 453px;
+                }
+                @include small_tabletVertical{
+                    width: 50%;
+                    height: 100%;
+                }
+                @include mobile{
+                    width: 100%;
+                }
+            }
+            .banner-text{
+                @include padding-desktop;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                @include mobile{
+                    gap: 40px;
+                    padding: 30px;
+                }
+                .h1-text{
+                    display: block;
+                    @include heading_78;
+                    color: $brown;
+                    @include small-laptop{
+                        font-size: 58px;
+                    }
+                    @include tabletVertical{
+                        font-size: 36px;
+                    }
+                    @include small_tabletVertical{
+                        font-size: 24px;
+                    }
+                    @include mobile{
+                        font-size: 30px;
+                    }
+                }
+                .button-procedoor{
+                    width: 100%;
+                    background: none;
+                    border: 1px solid $brown;
+                    padding: 20px 0;
+                    border-radius: 1000px;
+                    cursor: pointer;
+                    @include heading_20;
+                    color: $brown;
+                    @include mobile{
+                        color: $white;
+                        background-color: $brown;
+                        padding: 14px 0;
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+    }
+    .hero-about-section{
+        padding-top: 144px;
+        background-color: #F8F8F8;
+        .hero-about-container{
+            padding-bottom:80px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.10);
+            @include mobile{
+                padding-bottom:0 ;
+            }
+            .d-none-img{
+                display: none;
+                @include mobile{
+                    display: block;
+                    padding-bottom: 60px;
+                }
+            }
+            .d-block{
+                display: block;
+                padding: 0 40px;
+                @include mobile {
+                    display: none;
+
+                }
+            }
+            img{
+                width: 100%;
+            }
+            
+        }
+    }
+    .groomers-content-section{
+        background-color: #F8F8F8;
+        .groomers-content-container{
+            border-bottom: 1px solid rgba(0, 0, 0, 0.10);
+            @include padding-section;
+            @include mobile{
+                padding-top: 100px;
+                padding-bottom: 80px;
+            }
+            .h1-text{
+                display: block;
+                @include heading_48;
+                max-width: 1106px;
+                @include tabletVertical{
+                    font-size: 36px;
+                }
+                @include mobile{
+                    font-size: 30px;
+                }
+            }
+            .content{
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+                @include mobile{
+                    gap: 60px;
+                    margin-top: 40px;
+                }
+                .d-block{
+                    display: block;
+                    @include mobile{
+                        display: none;
+                    }
+                }
+                .d-none-img{
+                    display: none;
+                    @include mobile{
+                        display: block;
+                    }
+                }
+                img{
+                    max-width: 100%
+                    
+                }
+                .p-text{
+                    @include heading_20;
+                    display: block;
+                    margin-right: 234px;
+                    max-width: 452px;
+                    margin-top: 60;
+                    margin-bottom: 80px;
+                    @include mobile{
+                        display: flex;
+                        margin: 0;
+                        text-align: left;
+                        font-size: 16px;
+                    }
+                }
+            }
+           
+        }
+    }
+    .command-section{
+        background-color: #F8F8F8;
+        .command-container{
+            padding: 200px 0;
+            padding-bottom: 80px;
+            text-align: center;
+
+            @include mobile{
+                padding-top: 40px  ;
+            }
+            @include mobile{
+                padding-bottom: 0px;
+                margin-bottom: -60px;
+            }
+            .h1-text{
+                display: inline-block;
+                @include heading_96;
+                max-width: 1358px;
+                @include tabletVertical{
+                    font-size: 48px;
+                }
+                @include mobile{
+                    font-size: 30px;
+                    width: 306px;
+                }
+                .brown-text{
+                    color: $brown;
+                }
+            }
+            .contant-card{
+                margin-top: 120px;
+                display: flex;
+                justify-content: space-between;
+                @include mobile{
+                    margin-top: 60px;
+                }
+                .p-text{
+                    display: block;
+                    @include heading_20;
+                    color: rgba(0, 0, 0, 0.40);
+                    text-align: left
+                }
+                .command{
+                    @include small_tabletVertical{
+                         display: none;
+                    }
+                }
+                .cards{
+                    display: grid;
+                    grid-template-columns: 1fr 1fr ;
+                    gap: 20px;
+                    @include small_tabletVertical{
+                       grid-template-columns: 1fr;
+                    }
+                    .card{
+                        @include padding-desktop;
+                        background-color: $white;
+                        text-align: left;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        gap: 120px;
+                        border-radius: 12px 64px 12px 12px;
+                        border: 1px solid  rgba(0, 0, 0, 0.10);
+                        max-width: 577px;
+                        @include mobile{
+                            gap: 80px;
+                        }
+                        .start{
+                            display: flex;
+                            flex-direction: column;
+                            gap: 40px;
+                            align-items: flex-start;
+                            img{
+                                width: 159px;
+                                height: 159px;
+                                @include small_tabletVertical{
+                                    width: 64px;
+                                    height: 64px;
+                                }
+                            }
+                            .name-job{
+                                display: flex;
+                                flex-direction: column;
+                                gap: 20px;
+                            }
+                            .name{
+                                display: block;
+                                @include heading_48;
+                                @include small_tabletVertical{
+                                    font-size: 30px;
+                                }
+                            }
+                            .job{
+                                display: block;
+                                @include heading_20;
+                                color: rgba(0, 0, 0, 0.40);
+                                @include mobile{
+                                    font-size: 16px;
+                                }
+                            }
+                        }
+                        .end{
+                            .history{
+                                display: block;
+                                @include heading_20;
+                                max-width: 495px;
+                                @include small_tabletVertical{
+                                    @include heading_16;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            
+        }
+    }
+    .reviews-section{
+        background-color: #F8F8F8;
+        padding-top: 200px;
+        .reviews-container{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 95px;
+            @include mobile{
+                gap: 20px;
+            }
+            .h1-text{
+                display: block;
+                @include heading_96;
+                max-width: 1191px;
+                @include tabletHorizontal{
+                    font-size: 76px;
+                }
+                @include tabletVertical{
+                    font-size: 30px;
+                }
+                @include mobile{
+                    width: 320px;
+                    padding-bottom: 40px;
+                }
+                .brown-text{
+                    color: $brown;
+                }
+
+            }
+            button{
+                width: 50%;
+                @include heading_20;
+                padding: 20px 0;
+                background: none;
+                border-radius: 1000px;
+                border: 1px solid rgba(0, 0, 0, 0.10);
+                cursor: pointer;
+                @include mobile{
+                    width: 100%;
+                    padding: 14px 0;
+                }
+            }
+            .cards{
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+                gap: 20px;
+                @include laptop{
+                    grid-template-columns: 1fr 1fr 1fr;
+                }
+                @include tabletHorizontal{
+                    grid-template-columns: 1fr 1fr ;
+                }
+                @include tabletVertical{
+                    grid-template-columns: 1fr;
+                    gap: 20px;
+                }
+                .card{
+                    border-radius:64px 12px  12px 12px;
+                    border: 1px solid rgba(0, 0, 0, 0.10);
+                    background-color: $white;
+                    @include padding-desktop;
+                    text-align: left;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 80px;
+                    @include tabletVertical{
+                        padding: 30px;
+                    }
+                    img{
+                        width: 90px;
+                        height: 90px;
+                        @include mobile{
+                            width: 64px;
+                            height: 64px;
+                        }
+                    }
+                    .start{
+                        display: flex;
+                        flex-direction: column;
+                        gap: 40px;
+                        @include mobile{
+                            gap: 30px;
+                        }
+                        .jov-name{
+                            display: flex;
+                            flex-direction: column;
+                            gap: 10px;
+                            .name{
+                                display: block;
+                                @include heading_30;
+                            }
+                            .job{
+                                display: block;
+                                @include heading_16;
+                                color:rgba(0, 0, 0, 0.40);
+                            }
+                        }
+                    }
+                    .end{
+                        .history{
+                            display: block;
+                            max-width: 354px;
+                            @include heading_20;
+                            @include tabletVertical{
+                                font-size: 16px;
+
+                            }
+                        }
+                    }
+                }
+                .two-card{
+                    background-color: $white;
+                    border-radius: 12px 64px 12px 12px;
+                    border: 1px solid  rgba(0, 0, 0, 0.10);
+                    
+                }
+            }
+        }
+    }
+    .error-section{
+        background-color: #F8F8F8;
+        padding-top: 150px;
+        padding-bottom: 150px;
+        .error-container{
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            align-items: center;
+            img{
+                margin-right: 480px;
+                max-width: 100%;
+                @include mobile{
+                    margin: 0;
+                    align-items: flex-start;
+                }
+            }
+            .content{
+                border-radius: 12px 64px 12px 12px;
+                border: 1px solid rgba(0, 0, 0, 0.10);
+                max-width: 1068px;
+                margin-right: 0;
+                @include padding-desktop;
+                background-color: $white;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: stretch;
+                gap: 120px;
+                @include mobile{
+                    padding: 30px;
+                    width: 355px;
+                }
+                .h1-text{
+                    display: block;
+                    @include heading_78;
+                    max-width: 913px;
+                    @include tabletVertical{
+                        font-size: 48px;
+                    }
+                    @include mobile{
+                        font-size: 30px;
+                    }
+                }
+                .end{
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: flex-end;
+                    @include tabletVertical{
+                        flex-direction: column;
+                        align-items: flex-start;
+                        gap: 40px;
+                    }
+                    
+                    .p-text{
+                        margin-top: 57px;
+                        display: block;
+                        @include heading_30;
+                        color: rgba(0, 0, 0, 0.40);
+                        @include mobile{
+                            margin: 0;
+                            font-size: 16px;
+                        }
+                    }
+                    .buttom{
+                        width: 484px;
+                        @include heading_20;
+                        padding: 20px 0;
+                        background-color: $brown;
+                        color: $white;
+                        border: none;
+                        border-radius: 1000px;
+                        cursor: pointer;
+                        @include mobile{
+                            width: 300px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .hero-block-section{
+        background-color: #F8F8F8;
+        padding-top: 200px;
+        padding-bottom: 0px;
+        @include mobile{
+            padding-top: 160px;
+        }
+        .hero-block-container{
+            display: flex;
+            flex-direction: column;
+            gap: 120px;
+            @include mobile{
+                gap: 60px;
+            }
+            .h1-text{
+                @include heading_48;
+                display: block;
+                max-width: 1106px;
+                @include tabletVertical{
+                    font-size: 36px ;
+                }
+                @include mobile{
+                    font-size: 20px;
+                    width: 321px;
+                }
+                .brown-text{
+                    color: $brown;
+                }
+            }
+            .prices{
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+                @include small_tabletVertical{
+                    width: 100%;
+                }
+                img{
+                    position: -webkit-sticky;
+                    position: sticky;
+                    top: 100px;
+                    @include tabletHorizontal{
+                        display: none;
+                    }
+                }
+                .padding-top{
+                    border-top: 1px solid rgba(0, 0, 0, 0.10);;
+                }
+                .flex{
+                    display: flex;
+                    flex-direction: column;
+                }
+                .price{
+                    display: flex;
+                    justify-content: space-between;
+                    max-width: 1170px;
+                    border-bottom: 1px solid rgba(0, 0, 0, 0.10);
+                    padding: 40px 0 ;
+                    margin-right: 60px;
+                    @include tabletVertical{
+                        flex-direction: column;
+                        gap: 60px;
+                        margin-right: 0;
+                        
+                    }
+                    @include small_tabletVertical{
+                        width: 100%;
+                    }
+                    @include mobile{
+                        padding: 60px 0;
+                    }
+                    .brown-text{
+                        @include heading_30;
+                        color: $brown;
+                        display: inline-flex;
+                        width: 233px;
+                    }
+                    .content{
+                        display: flex;
+                        flex-direction: column;
+                        gap: 80px;
+                        max-width: 516px;
+                        .text{
+                            display: flex;
+                            flex-direction: column;
+                            gap: 40px;
+                            @include mobile{
+                                gap: 20px;
+                            }
+                            .h1-text{
+                                display: inline-flex;
+                                @include heading_30;
+                                max-width: 401px;
+                                @include mobile{
+                                    font-size: 20px
+                                }
+                            }
+                            .p-text{
+                                @include heading_20;
+                                display: block;
+                                max-width: 470px;
+                                @include mobile{
+                                    font-size: 16px;
+                                }
+                            }
+                        }
+                        ul{
+                            display: grid;
+                            grid-template-columns: 1fr 1fr ;
+                            padding: 0;
+                            margin: 0;
+                            text-align: left;
+                            @include tabletVertical{
+                                grid-template-columns: 1fr ;
+                                gap: 20px;
+                            }
+                            li{
+                                color: rgba(0, 0, 0, 0.40);
+                                max-width: 172px;
+                                margin-left: 20px;
+                                @include mobile{
+                                    font-size: 14px;
+                                }
+                            }
+                        }
+                    }
+                    .price-text{
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        width: 234px;
+                        text-align: right;
+                        align-items: flex-end;
+                        @include tabletVertical{
+                            text-align: left;
+                            align-items: flex-start;
+                            gap: 40px;
+                            width: 100%;
+                        }
+                        button{
+                            font-size: 16px;
+                            height: 41px;
+                            @include tabletVertical{
+                                width: 100%;
+                            }
+                        }
+                        .end{
+                            display: flex;
+                            flex-direction: column;
+                            gap: 20px;
+                            
+                            .brown-text-h1{
+                                display: block;
+                                @include heading_48;
+                                color: $brown;
+                                @include small-laptop{
+                                    font-size: 36px;
+                                }
+                                @include mobile{
+                                    font-size: 30px;
+                                }
+                            }
+                            .grey-text{
+                                opacity: 0.20000000298023224;
+                                display: block;
+                                @include heading_16;
+                                @include small_tabletVertical{
+                                    width: 234px;
+                                }
+                            }
+                        }
+
+                        
+                    }
+                }
+            }
+        }
+    }
+    .ceo-text-section{
+        .ceo-text-container{
+
+
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        width: 100%;
+            height: 100%;
+        span{
+            display: block;
+        }
+        .h1-text{
+            margin: 0;
+             @include heading_96;
+            @include laptop{
+                @include heading_78;
+            }
+            @include tabletHorizontal{
+                @include heading_48;
+            }
+        }
+        p{
+             @include heading_20;
+            @include tabletHorizontal{
+                @include  heading_16;
+            }
+        }
+        ul li{
+
+        }
+        .h2-text{
+            @include  heading_30;
+        }
+
+    }
+        }
+}
+.section-white{
+    @include mobile{
+        background-color: #F8F8F8;
+    }
+}

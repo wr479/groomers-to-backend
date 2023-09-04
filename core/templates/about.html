@@ -1,0 +1,180 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Groomer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="../static/styles/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+</head>
+<body>
+   <header>
+        <div class="header-section">
+            <div class="header-container container">
+                <div class="content-main">
+                    <div class="start-content">
+                        <a href="{% url 'index' %}"><img srcset="{% static 'images/logos/logo.svg' %}"></a>
+                        <div class="text">
+                            <a href="{%url 'index'%}" ><span >Главная</span></a>
+                            <a href="{% url "about" %}"><span class="black-text">О нас</span></a>
+
+                            <a href="{% url 'price' %}"><span>Прайс лист</span></a>
+                            <a href="{% url 'revievs' %}"><span>Отзывы</span></a>
+                        </div>
+                    </div>
+                    <div class="end-content">
+                        <button class="btn white popup-open call">Обратный звонок</button>
+                        <button class="btn brown popup-open application">Оставить заявку</button>
+                    </div>
+                    <div class="end-content-mobile">
+                        <button class="btn white close-open"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                            <path d="M2.5 10.5H17.5M2.5 5.5H17.5M7.5 15.5H17.5" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                          </svg> <span>Меню</span></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="popup-fade">
+            <div class="popup">
+                <div class="panel">
+                    <div class="back-call">
+                        <span class="h1-text">Обратный звонок</span>
+                        <a class="popup-close" href="#"><img srcset="{% static 'images/animate-image/x-close.svg' %}"></a>
+                    </div>
+                    <div class="input">
+                        <input class="val name-fename" data-inputType="name"   placeholder="Фамилия и Имя" required>
+                        <input class="val numbers-tel"  data-inputType="phone " name="phone" type="tel" placeholder="Номер телефона" required>
+                        <input class=" type-question" data-inputType="type-question" placeholder="Тип вопроса" required>
+                        <div class="dropdown type-category">
+                            <input type="text" for="input-category"  class="  selected-category" data-inputType="сategory" required placeholder="Выберите категорию">
+                            <label class="dropdown-list" id="input-category">
+                              <span data-value="Гигиенический груминг">Гигиенический груминг</span>
+                              <span data-value="Профессиональный груминг">Профессиональный груминг</span>
+                              <span data-value="Эстетический груминг">Эстетический груминг</span>
+                            </label>
+                        </div>
+                        <button class="makeOrder">Отправить</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="menu d-none-menu">
+            <div class="menu-sub container">
+                <div class="cards">
+                    <a href="{%url 'index'%}">
+                        <div class="card one-card">
+                            <span class="h1-text">Главная</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M7 7L17 17M17 17V7M17 17H7" stroke="#9A500F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </div>
+                    </a>
+                    <a href="{% url 'about' %}">
+                        <div class="card two-card">
+                            <span class="h1-text">О нас</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M7 7L17 17M17 17V7M17 17H7" stroke="#9A500F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </div>
+                    </a>
+                    <a href="{% url 'price' %}">
+                        <div class="card three-card">
+                            <span class="h1-text">Прайсы</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M7 7L17 17M17 17V7M17 17H7" stroke="#9A500F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </div>
+                    </a>
+                    <a href="{% url 'revievs' %}">
+                        <div class="card four-card">
+                            <span class="h1-text">Отзывы</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M7 7L17 17M17 17V7M17 17H7" stroke="#9A500F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </div>
+                    </a>
+                </div>
+                <div class="end-content">
+                    <button class="btn white popup-open call">Обратный звонок</button>
+                    <button class="btn brown popup-open application">Оставить заявку</button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section>
+            <div class="hero-about-section">
+                <div class="hero-about-container container">
+                    <img class="d-block" src=" {% static 'images/gallery/groomers.png' %}">
+                    <img class="d-none-img"  src="{% static 'images/gallery/groomersv.png' %}">
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="groomers-content-section">
+                <div class="groomers-content-container container">
+                    <span class="h1-text">Грумеры - сообщество любителей животных. Люди, которые действительно любят свое дело, и получают от него удовольствие.</span>
+                    <div class="content">
+                        <span class="p-text">Уход за животными - это такое же искусство как и рисование, музыка, поэзия. При этом многие компании, предоставляющие груминг-услуги считают работу рутиной.</span>
+                        <img  class="d-block" src="{% static 'images/gallery/drying.png' %}">
+                        <img class="d-none-img" src=" {% static 'images/gallery/syshka.png' %}">
+                    </div>
+                   
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="command-section">
+                <div class="command-container container">
+                    <span class="h1-text">Наша основная команда состоит из грумеров с опытом в  <span class="brown-text">более 10-ти лет</span></span>
+                    <div class="contant-card">
+                        <span class="p-text command">Команда</span>
+                        <div class="cards">
+                            {% for master in masters %}
+                            <div class="card">
+                                <div class="start">
+                                   <img src="{{ master.photo.url }}">
+                                    <div class="name-job">
+                                        <span class="name">{{ master.name }}</span>
+                                        <span class="job">О{{ master.post }}</span>
+                                    </div>
+                                    
+                                </div>
+                                <div class="end">
+                                    <span class="history">{{ master.description }}</span>
+                                </div>
+                            </div>
+                             {% endfor %}
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-section">
+            <div class="footer-container container">
+                <img class="d-block-mobile" src=" {% static 'images/footer/vector.svg' %}">
+                <img class="d-none-mobile" src=" {% static 'images/footer/groomers.svg' %}">
+                <div class="footer-end">
+                    <a href="https://studiya-saitov.com/"><img src=" {% static 'images/footer/website-studio.svg' %}"></a>
+                    <div class="end">
+                        <div class="all-def">
+                            <span class="def">©️ GROOMERS 2021 - 2023.</span>
+                            <span class="def">Все права защищены.</span>
+                        </div>
+                        
+                        <div class="politic">
+                            <span>Политика конфиденциальности</span>
+                            <span>Пользовательское соглашение</span>
+                        </div>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://yandex.st/jquery/2.1.1/jquery.min.js"></script>
+    <script type="module" src="../static/scripts/app.js" ></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/imask"></script>
+</body>
+</html>

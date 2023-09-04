@@ -1,0 +1,35 @@
+.dropdown{
+    position: relative;
+    .dropdown-list{
+        display: none;
+    }
+    .dropdown-list-hover{
+        text-decoration: none;
+        position: absolute;
+        background-color:$white ;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        border-bottom-left-radius:40px;
+        border-bottom-right-radius:40px ;
+        padding: 20px;
+        span{
+            display: block;
+            @include heading_20;
+            padding: 23px 20px;
+            color:rgba(0, 0, 0, 0.40);
+            cursor: pointer;
+            max-width:444px;
+            
+        }
+        span:hover{
+            display: block;
+            @include heading_20;
+            padding: 23px 20px;
+            background: rgba(0, 0, 0, 0.10);
+            cursor: pointer;
+            border-radius: 40px;
+        }
+    }
+}

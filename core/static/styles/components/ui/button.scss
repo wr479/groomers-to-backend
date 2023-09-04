@@ -1,0 +1,30 @@
+.btn{
+    padding: 14.5px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: none;
+    color: $white;
+    border-radius: 1000px;
+    border: none;
+    cursor: pointer;
+    
+    &.white{
+        color: $black;
+        background-color: none;
+        border: 1px solid var(--black-10, rgba(0, 0, 0, 0.10));
+    }
+    &.brown{
+        background: var(--korma, #9A500F);
+    }
+}
+.black-text{
+    color: $black;
+}
+.display-block{
+    display: block;
+}
+.display-none{
+    display: none;
+}
