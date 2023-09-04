@@ -1,41 +1,75 @@
-
-<!DOCTYPE html>
+{% load static %}
 <html>
 <head>
-    <title>{% block title %}Base Django Project{% endblock %}</title>
-
-    {% if site_setings.favicon %}
-        <link rel="icon" type="image/x-icon" href="{{ site_settings.favicon.url }}">
-    {% endif %}
-
-    {# Meta tags #}
-    {# <meta charset="utf-8">#}
-
-    {# Stylesheets #}
-    {# <link rel="stylesheet" href="css/master.css"> #}
-
-    {# Scripts #}
-    {# <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script> #}
-
-    {#  Apply extra head html from site settings #}
-    {% autoescape off %}{{ site_settings.extra_head_html }}{% endautoescape %}
-    {# Extra head can be added in child html #}
-    {% block extra_head %}{% endblock %}
+ <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Groomer</title>
+    <meta name="theme-color" content="#9A500F">
+    <meta name="msapplication-navbutton-color" content="#9A500F">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#9A500F">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="../static/styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500&display=swap" rel="stylesheet">
+    <script src="  'https://code.jquery.com/jquery-3.7.0.min.js' "></script>
 </head>
 <body>
-    {% block content %}
-        <h1>UTM playground</h1>
-        <p>Current user has these UTM's: </p>
-        <ul>
-        {% for uname, uval in request.session.utm.items %}
-            <li>{{ uname }}: {{ uval }}</li>
-        {% empty %}
-            <li>No UTM's</li>
-        {% endfor %}
-        </ul>
-    {% endblock %}
 
-    {# Apply extra body html from site settings #}
-    {% autoescape off %}{{ site_settings.extra_body_html }}{% endautoescape %}
+
+ {% block header %}
+        {% include "components/header.html" with class="index" %}
+ {% endblock %}
+
+{% block content %}
+
+{% endblock %}
+
+{% block footer %}
+ {% include "components/footer.html" with class="index" %}
+{% endblock %}
+
+{% csrf_token %}
+{# Apply extra body html from site settings #}
+{% autoescape off %}{{ site_settings.extra_body_html }}{% endautoescape %}
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://yandex.st/jquery/2.1.1/jquery.min.js"></script>
+<script src="{% static 'scripts/modules/wow.min.js' %}"></script>
+<script>
+    wow = new WOW(
+        {
+            boxClass: 'wow',      // default
+            animateClass: 'animated', // default
+            offset: 50,          // default
+            mobile: true,       // default
+            live: true        // default
+        }
+    )
+    wow.init();
+</script>
+<script type="module" src="{% static  'scripts/app.js' %}"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://unpkg.com/imask"></script>
+<script>
+    $(document).ready(function () {
+        $(".selected-category").on("click", function () {
+            $(".dropdown-list").toggle();
+        });
+
+        $(".dropdown-list span").on("click", function () {
+            const selectedValue = $(this).attr("data-value");
+            $(".selected-category").val(selectedValue);
+            $(".dropdown-list").hide();
+        });
+
+        $(document).on("click", function (event) {
+            if (!$(event.target).closest(".dropdown").length) {
+                $(".dropdown-list").hide();
+            }
+        });
+    });
+</script>
 </body>
 </html>

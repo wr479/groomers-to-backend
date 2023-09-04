@@ -1,5 +1,4 @@
 from django.urls import path
-from .views import ajax
 from .models import Masters
 from .models import Service
 from .models import Review
@@ -22,7 +21,7 @@ urlpatterns = [
     path('reviews/', views.ReviewsView.as_view(), name="revievs"),
     path('price/', views.PriceView.as_view(), name="price"),
     # Переделать
-    re_path(r'^ajax/$', ajax, name='ajax'),
+    path('ajax/', views.AjaxView.as_view(), name="ajax"),
     # path('contact-form/', contact_form, name='contact_form'),
     # path('contacts/', TemplateView.as_view(**{"template_name": "contacts.html"}), name="contacts"),
     path('page/<slug:page_slug>/', views.GenericTextPageView.as_view(), name="text_page"),

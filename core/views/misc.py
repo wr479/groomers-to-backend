@@ -1,3 +1,5 @@
+import pdb
+
 from django.views import generic
 from core import models, mixins
 from django.views import View
@@ -51,6 +53,39 @@ class ReviewsView(mixins.TextPageMixin, generic.TemplateView):
         return context
 
 
+class AjaxView(View):
+    def post(self, request):
+        data = request.body
+        pdb.set_trace()
 
+        # if data.get('type') == 'callback':
+    #             result = create_order(['name', 'phone'], data, 'Обратный звонок')
 
+    def create_order(self):
+        pass
 
+#
+#
+
+#         data = json.loads(request.body)
+
+#         if data.get('type') == 'callback':
+#             result = create_order(['name', 'phone'], data, 'Обратный звонок')
+#         if data.get('type') == 'consultation':
+#             result = create_order(['name', 'phone', 'email', 'comment'], data, 'Консультация')
+#         if data.get('type') == 'trucking':
+#             result = create_order(['name', 'phone', 'dimensions', 'weight', 'city_from', 'city_to'], data,
+#                                   'Расчёт грузоперевозки')
+#         if data.get('type') == 'cargo':
+#             result = create_order(['name', 'phone', 'email', 'comment', 'cargo', 'weight', 'city_to'], data,
+#                                   'Расчёт доставки опасного груза')
+#         if data.get('type') == 'cargo_product':
+#             result = create_order(['name', 'phone', 'email', 'comment', 'cargo', 'weight', 'city_from', 'city_to'],
+#                                   data,
+#                                   'Расчёт доставки опасного груза')
+#         if data.get('type') == 'application':
+#             result = create_order(['name', 'phone', 'email', 'comment', 'cargo', 'weight', 'city_to'], data,
+#                                   'Заявка на покупку метанола')
+#         if data.get('type') == 'jobs':
+#             result = create_order(['name', 'phone'], data, 'Заявка на работу')
+#     return JsonResponse({'created': result})
