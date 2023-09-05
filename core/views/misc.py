@@ -1,21 +1,11 @@
-import pdb
-import json
-import json
-from telegram import Bot
-
-from django.http import JsonResponse
-from django.views import View
-from telegram import Bot
+import requests
 from django.views import generic
 from core import models, mixins
-from django.views import View
 from . import models
 from ..models import YourModel
-from django.http import JsonResponse
 import json
 from django.http import JsonResponse
 from django.views import View
-from django.conf import settings
 from telegram import Bot
 
 
@@ -63,7 +53,7 @@ class ReviewsView(mixins.TextPageMixin, generic.TemplateView):
 
 class AjaxView(View):
 
-    async def post(self, request):
+    def post(self, request):
         try:
             data = json.loads(request.body)
             name = data.get('name')
@@ -77,20 +67,28 @@ class AjaxView(View):
 
             # Отправьте сообщение в Telegram
             message = f"Новая заявка!\nИмя: {name}\nТелефон: {phone}\nВопрос: {question}\nКатегория: {category}"
-            bot = Bot(token="6641574210:AAGhG8dJLEWKC520G2NuT8JbiVO4XNiRImU")
+
+            # Отправка сообщения в Telegram с использованием библиотеки requests
+            token = "6641574210:AAGhG8dJLEWKC520G2NuT8JbiVO4XNiRImU"
             chat_id = "-907409135"
-            bot.send_message(chat_id, message)
-            print("ура")
-            # Верните успешный JSON-ответ
-            response_data = {'message': 'Данные успешно сохранены'}
-            return JsonResponse(response_data)
+            telegram_api_url = f"https://api.telegram.org/bot{token}/sendMessage"
+            params = {'chat_id': chat_id, 'text': message}
+            response = requests.get(telegram_api_url, params=params)
+
+            # Проверяем успешность отправки сообщения
+            if response.status_code == 200:
+                # Верните успешный JSON-ответ
+                response_data = {'message': 'Данные успешно сохранены'}
+                return JsonResponse(response_data)
+            else:
+                # Если отправка не удалась, верните соответствующий ответ
+                return JsonResponse({'success': False, 'error': 'Ошибка при отправке в Telegram'})
+
         except Exception as e:
             return JsonResponse({'success': False, 'error': str(e)})
 
-
-def create_order(self):
-    pass
-
+    def create_order(self):
+        pass
 #
 #
 
