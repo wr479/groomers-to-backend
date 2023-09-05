@@ -4,8 +4,6 @@ from django.urls import reverse
 from .base import BaseMenuItemModel, BaseSEOModel
 
 
-
-
 class TextPage(BaseMenuItemModel, BaseSEOModel):
     """Тектовая страница"""
 
@@ -21,6 +19,7 @@ class TextPage(BaseMenuItemModel, BaseSEOModel):
         blank=True,
         default=True
     )
+
     def __str__(self):
         return self.name
 

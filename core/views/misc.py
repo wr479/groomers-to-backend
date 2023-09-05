@@ -1,11 +1,22 @@
 import pdb
 import json
+import json
+from telegram import Bot
+
+from django.http import JsonResponse
+from django.views import View
+from telegram import Bot
 from django.views import generic
 from core import models, mixins
 from django.views import View
 from . import models
 from ..models import YourModel
 from django.http import JsonResponse
+import json
+from django.http import JsonResponse
+from django.views import View
+from django.conf import settings
+from telegram import Bot
 
 
 class IndexView(mixins.TextPageMixin, generic.TemplateView):
@@ -51,28 +62,34 @@ class ReviewsView(mixins.TextPageMixin, generic.TemplateView):
 
 
 class AjaxView(View):
-    print("faes")
 
-    def post(self, request):
-        data = json.loads(request.body)
-        name = data.get('name')
-        phone = data.get('phone')
-        question = data.get('question')
-        category = data.get('category')
+    async def post(self, request):
+        try:
+            data = json.loads(request.body)
+            name = data.get('name')
+            phone = data.get('phone')
+            question = data.get('question')
+            category = data.get('category')
 
-        # Создайте объект модели и сохраните данные
-        your_model_instance = YourModel(name=name, phone=phone, question=question, category=category)
-        your_model_instance.save()
+            # Создайте объект модели и сохраните данные
+            your_model_instance = YourModel(name=name, phone=phone, question=question, category=category)
+            your_model_instance.save()
 
-        # Верните успешный JSON-ответ
-        response_data = {'message': 'Данные успешно сохранены'}
-        return JsonResponse(response_data)
-        # if data.get('type') == 'callback':
+            # Отправьте сообщение в Telegram
+            message = f"Новая заявка!\nИмя: {name}\nТелефон: {phone}\nВопрос: {question}\nКатегория: {category}"
+            bot = Bot(token="6641574210:AAGhG8dJLEWKC520G2NuT8JbiVO4XNiRImU")
+            chat_id = "-907409135"
+            bot.send_message(chat_id, message)
+            print("ура")
+            # Верните успешный JSON-ответ
+            response_data = {'message': 'Данные успешно сохранены'}
+            return JsonResponse(response_data)
+        except Exception as e:
+            return JsonResponse({'success': False, 'error': str(e)})
 
-        # result = create_order(['name', 'phone'], data, 'Обратный звонок')
 
-    def create_order(self):
-        pass
+def create_order(self):
+    pass
 
 #
 #

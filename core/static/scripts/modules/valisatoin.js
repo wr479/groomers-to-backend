@@ -33,7 +33,7 @@ export function validation() {
 
         $.ajax({
             type: 'POST',
-            url: '/ajax/', // Replace with your server endpoint URL
+            url: 'ajax/', // Replace with your server endpoint URL
             data: JSON.stringify(data),
             dataType: 'json',
             headers: {
